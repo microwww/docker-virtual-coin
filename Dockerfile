@@ -1,5 +1,7 @@
 FROM ethereum/client-go:v1.8.23
 
+VOLUME /root/.ethereum/
+
 ENV PASSWORD=123456
 ENV NONCE=
 ENV INTERVAL=55
