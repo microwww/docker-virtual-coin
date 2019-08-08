@@ -19,7 +19,7 @@ function mining() {
             if [ $1 -eq 0 ]; then
                 geth attach --exec 'miner.start()' > /dev/null
             fi
-            sleep 1
+            sleep 0.5
             mining `expr $1 + 2`
         else
             geth attach --exec 'miner.stop()' > /dev/null

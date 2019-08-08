@@ -2,7 +2,7 @@ FROM ethereum/client-go:v1.8.23
 
 ENV PASSWORD=123456
 ENV NONCE=
-ENV INTERVAL=1
+ENV INTERVAL=55
 ##  Math.floor((INTERVAL - 1)/10) * 10 + 10
 
 COPY OPTIONS /root/.ethereum/

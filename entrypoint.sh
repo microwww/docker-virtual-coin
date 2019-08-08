@@ -40,14 +40,14 @@ if [ ! -f "${gen}" ] ; then
 
 fi
 
-#if [ ! -d "/root/.ethereum/geth" ];then
+if [ ! -d "/root/.ethereum/geth" ];then
     geth init ${gen} 2>/dev/null
-#fi
+fi
 
 if [ -f "/root/.ethereum/OPTIONS" ];then
     OPTIONS=`cat /root/.ethereum/OPTIONS`
 fi
 
-/usr/local/bin/geth ${OPTIONS} $@
+exec /usr/local/bin/geth ${OPTIONS} $@
 ## /bin/sh
 
