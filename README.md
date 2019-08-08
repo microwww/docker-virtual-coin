@@ -11,12 +11,18 @@ docker run -d --name ethereum-node -v /data/ethereum:/root \
            ethereum/client-go
 ```
 
-## regtest
+## Regtest
 inner net test, and 10 senconds mine one .
 ```
 docker run -d --name ethereum-node -v /data/ethereum:/root \
-           -p 8545:8545 -p 30303:30303 \
+           -p 8545:8545 -p 30303:30303 --datadir=/root/.ethereum/ \
            ethereum/client-go --mine --minerthreads 1 \
                 --dev --dev.period=10 --rpcaddr 0.0.0.0 \
                 --rpc --rpcapi "db,eth,net,web3,personal"
 ```
+develop chain is mining to 0x000000... and not to modify !
+
+## Private network chain
+The dockerfile version, create genesis block with commond `geth init ` . Using docker `HEALTHCHECK` instruction to run `miner.start()` each 10 seconds. you can modify the frequency with `ENV INTERVAL 55`, 0-10 is 10S, 11-20 is 20S, and so on, this time is only in the ideal case, ANT not sure the count each ming .
+
+You can change `FROM ethereum/client-go:v1.8.23` to make the version .
