@@ -25,4 +25,6 @@ develop chain is mining to 0x000000... and not to modify !
 ## Private network chain
 The dockerfile version, create genesis block with command `geth init` . Using docker `HEALTHCHECK` instruction to run `mining.sh` each 10 seconds, in `mining.sh` file will run `miner.start()` . you can modify the frequency with `ENV INTERVAL 55`, 0-10 is 10S, 11-20 is 20S, and so on (this time is only in the ideal case, AND not sure the count each mining) to change the frequency to run `miner.start()`.
 
-Change `FROM ethereum/client-go:v1.8.23` can to make other version .
+Modify `FROM ethereum/client-go:v1.8.23` can to make other version .
+
+You can modify /root/.ethereum/OPTIONS file to change run `geth ...` arguments
