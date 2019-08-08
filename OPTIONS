@@ -1,1 +1,1 @@
---networkid 56 --datadir=/root/.ethereum/ --mine --minerthreads=1 --rpcaddr 0.0.0.0 --rpc --rpcapi db,eth,net,web3
+--datadir=/root/.ethereum/ --mine --minerthreads=1 --rpcaddr 0.0.0.0 --rpc --rpcapi db,eth,net,web3

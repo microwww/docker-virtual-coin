@@ -14,5 +14,5 @@ HEALTHCHECK --interval=10s --retries=3 CMD /mining.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 #ENTRYPOINT [""]
-CMD [""]
+CMD ["--networkid 56"]
 ## --mine --minerthreads=1 --maxpeers 0 --rpcaddr 0.0.0.0 --rpc --rpcapi db,eth,net,web3
