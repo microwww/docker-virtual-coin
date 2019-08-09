@@ -44,9 +44,11 @@ if [ ! -d "/root/.ethereum/geth" ];then
     geth init ${gen} 2>/dev/null
 fi
 
-if [ -f "/root/.ethereum/OPTIONS" ];then
-    OPTIONS=`cat /root/.ethereum/OPTIONS`
+if [ ! -f "/root/.ethereum/OPTIONS" ];then
+    echo '--datadir=/root/.ethereum/ --mine --minerthreads=1 --rpcaddr 0.0.0.0 --rpc --rpcapi db,eth,net,web3'  > /root/.ethereum/OPTIONS
 fi
+
+OPTIONS=`cat /root/.ethereum/OPTIONS`
 
 exec /usr/local/bin/geth ${OPTIONS} $@
 ## /bin/sh
