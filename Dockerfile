@@ -8,12 +8,12 @@ ENV INTERVAL=55
 ##  Math.floor((INTERVAL - 1)/10) * 10 + 10
 
 COPY entrypoint.sh /
-COPY mining.sh /
-RUN chmod +x /entrypoint.sh /mining.sh
+COPY mining-health.sh /
+RUN chmod +x /entrypoint.sh /mining-health.sh
 
-HEALTHCHECK --interval=10s --retries=3 CMD /mining.sh
+HEALTHCHECK --interval=10s --retries=3 CMD /mining-health.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 #ENTRYPOINT [""]
-CMD [""]
+#CMD [""]
 ## --mine --minerthreads=1 --maxpeers 0 --rpcaddr 0.0.0.0 --rpc --rpcapi db,eth,net,web3
