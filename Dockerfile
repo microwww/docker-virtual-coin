@@ -1,7 +1,7 @@
 FROM debian:stretch
 
 ENV     ZCASH_VERSION=2.0.6 \
-        ZCASH_CONF=/home/zcash/.zcash/zcash.conf
+        ZCASH_DIR=/root/.zcash/
 
 RUN apt update \
     && apt-get install -y apt-transport-https wget gnupg2 \
@@ -10,16 +10,16 @@ RUN apt update \
     && apt-get update \
     && apt-get install -y zcash=${ZCASH_VERSION}
 
-RUN useradd -d /home/zcash -m zcash \
-    && mkdir -p /home/zcash/.zcash/ \
-    && cp /usr/share/doc/zcash/examples/zcash.conf ${ZCASH_CONF} \
-    && chown -R zcash /home/zcash/ \
-    && echo '/usr/bin/zcash-fetch-params && /usr/bin/zcashd' >> /start.sh
+RUN mkdir -p ${ZCASH_DIR} \
+    && cp /usr/share/doc/zcash/examples/zcash.conf ${ZCASH_DIR} \
+    && echo '#!/bin/sh' > /start.sh \
+    && echo 'set -e' >> /start.sh \
+    && echo '/usr/bin/zcash-fetch-params' >> /start.sh \
+    && echo 'exec /usr/bin/zcashd $@' >> /start.sh \
+    && chmod +x /start.sh
 
-WORKDIR ["/home/zcash"]
-VOLUME ["/home/zcash/.zcash"]
+VOLUME /root/.zcash
 EXPOSE 8232/tcp
 
-USER zcash
-
-ENTRYPOINT ["/bin/bash", "/start.sh"]
+ENTRYPOINT ["/start.sh"]
+CMD [""]
