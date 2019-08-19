@@ -17,5 +17,7 @@ RUN chmod +x /entrypoint.sh && rm -rf /tmp/*
 
 WORKDIR ${omnicore_HOME}
 
+EXPOSE 8332 8333 18332 18333 18443 18444
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD []
