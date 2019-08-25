@@ -1,4 +1,4 @@
-FROM ubuntu:cosmic 
+FROM ubuntu:18.04
 
 ARG version=0.5.0
 ENV omnicore_HOME=/opt/omnicore-${version}
