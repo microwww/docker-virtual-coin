@@ -1,6 +1,6 @@
 FROM ruimarinho/bitcoin-core:0.18
 
-ENV INTERVAL=595
+ENV INTERVAL=605
 ##  Math.floor((INTERVAL - 1)/10) * 10 + 10
 
 COPY mining-health.sh /
