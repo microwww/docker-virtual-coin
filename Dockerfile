@@ -1,7 +1,7 @@
 FROM debian:stretch
 
-ENV     ZCASH_VERSION=2.0.6 \
-        ZCASH_DIR=/root/.zcash/
+ARG ZCASH_VERSION=2.0.6
+ENV ZCASH_DIR=/root/.zcash/
 
 RUN apt update \
     && apt-get install -y apt-transport-https wget gnupg2 \
