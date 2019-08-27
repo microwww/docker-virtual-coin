@@ -16,7 +16,7 @@ RUN chmod +x /entrypoint.sh && rm -rf /tmp/*
 
 WORKDIR ${ETC_HOME}
 
-EXPOSE 30303 30301 8545
+EXPOSE 8545 30303 30301/udp
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD []
