@@ -7,7 +7,7 @@ Debian for zcash (ZEC) coin , block-chain database in /home/zcash/.zcash ! And c
 
 ### demo : 
 ```
-docker run -d -v /data/:/home/zcash/.zcash microwww/zcash:tagname
+docker run -d -v /data/:/root/.zcash/:tagname
 ```
 
 zcash code : [zcash](https://github.com/zcash/zcash)
