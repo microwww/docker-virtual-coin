@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e
 
-ofile="/home/${RUN_USER}/.dogecoin/OPTIONS"
+ofile="/root/.dogecoin/OPTIONS"
 if [ ! -f "$ofile" ];then
-    mkdir -p /home/${RUN_USER}/.dogecoin/
+    mkdir -p /root/.dogecoin/
     echo ''  > ${ofile}
 fi
 
