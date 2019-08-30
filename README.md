@@ -13,5 +13,5 @@ DASH office code in [github](https://github.com/dashpay/dash)
 ### demo
 
 ```
-docker run -d -p 9998:9998 -p 9999:9999 /data/dashcoin/:/root/.dashcore/ microwww/dashcore:0.14.0.1
+docker run -d -p 9998:9998 -p 9999:9999 -v /data/dashcoin/:/root/.dashcore/ microwww/dashcore:0.14.0.1
 ```
