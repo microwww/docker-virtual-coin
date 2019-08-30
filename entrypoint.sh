@@ -9,5 +9,5 @@ fi
 
 OPTIONS=`cat ${ofile}`
 
-#exec /usr/local/bin/dogecoind ${OPTIONS} $@
-/bin/bash
+exec /usr/local/bin/dogecoind ${OPTIONS} $@
+## /bin/bash
