@@ -1,20 +1,17 @@
 FROM ubuntu:18.04 
 
-ARG version=5.5.3
-ENV ETC_HOME=/opt/ethereum-classic-${version}
+ARG path=v6.0.8/geth-classic-v6.0.8-linux.tar.gz
 
-RUN apt update && apt install -y wget \
-    && mkdir -p /root/.ethereum-classic/ && mkdir -p ${ETC_HOME} && cd /tmp/
+RUN apt update && apt install -y wget gzip && cd /tmp/
 
-RUN wget https://github.com/ethereumclassic/go-ethereum/releases/download/v${version}/ethereum-classic-go-ethereum-linux-v${version}.tar.gz \
-    && tar -xzvf ethereum-classic-go-ethereum-linux-v${version}.tar.gz -C ${ETC_HOME} \
-    && ln -s $ETC_HOME/geth /usr/local/bin/
+RUN wget -O coin.tar.gz https://github.com/ethereumclassic/go-ethereum/releases/download/${path} \
+    && gzip -d coin.tar.gz && tar -xvf coin.tar -C /opt/ \
+    && if [ -f "/opt/geth" ]; then name="."; else name=`ls /opt/ |grep 'geth' |tail -n1`; fi \
+    && ln -s /opt/${name}/geth /usr/local/bin/
 
 ADD entrypoint.sh /
 
 RUN chmod +x /entrypoint.sh && rm -rf /tmp/*
-
-WORKDIR ${ETC_HOME}
 
 EXPOSE 8545 30303
 
