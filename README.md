@@ -15,3 +15,4 @@ docker build -t microwww/ethereum-classic:5.5.3 . \
 docker run -d -p 8545:9545 -p 30303:30303 \
     -v /data/ethereum/:/root/.ethereum-classic/ microwww/ethereum-classic:6.0.6
 ```
+File `/root/.ethereum-classic/OPTIONS` can set `docker run ...` arguments
