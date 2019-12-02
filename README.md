@@ -1,5 +1,6 @@
 # docker-ethereumclassic-coin
-docker for ethereumclassic(ETC) coin, ethereum-classic code in [github](https://github.com/ethereumclassic/go-ethereum)
+docker for ethereumclassic(ETC) coin, ethereum-classic code in  ~~[ethereumclassic](https://github.com/ethereumclassic/go-ethereum)~~, move to [ethereumproject](https://github.com/ethereumproject/go-ethereum) but read only ! new project at [github-multi-geth](https://github.com/multi-geth/multi-geth) 
+
 
 ## build
 arg : `--build-arg path` download file from github in ethereum-classic !
