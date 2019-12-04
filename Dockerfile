@@ -17,5 +17,7 @@ COPY . /
 RUN chmod +x /entrypoint.sh \
     && curl 'https://eosnodes.privex.io/?config=1' >> /config.ini
 
+EXPOSE 9876 8888 
+
 ENTRYPOINT ["/entrypoint.sh"]
 
