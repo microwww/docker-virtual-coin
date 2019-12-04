@@ -13,9 +13,9 @@ RUN cd /tmp/ \
     && apt install -y ./eos.deb
 
 COPY . /
-RUN curl 'https://eosnodes.privex.io/?config=1' >> /config.ini
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /entrypoint.sh \
+    && curl 'https://eosnodes.privex.io/?config=1' >> /config.ini
 
 ENTRYPOINT ["/entrypoint.sh"]
 
