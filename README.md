@@ -1,5 +1,5 @@
 # docker-ethereumclassic-coin
-docker for ethereumclassic(ETC) coin, ethereum-classic code in  ~~[ethereumclassic](https://github.com/ethereumclassic/go-ethereum)~~, move to [ethereumproject](https://github.com/ethereumproject/go-ethereum) but read only ! new project at [github-multi-geth](https://github.com/multi-geth/multi-geth) 
+docker for ethereumclassic(ETC) coin, ethereum-classic code in  ~~[ethereumclassic](https://github.com/ethereumclassic/go-ethereum)~~, move to [ethereumproject](https://github.com/ethereumproject/go-ethereum) but read only ! new project at [github-etclabscore](https://github.com/etclabscore/go-ethereum) 
 
 
 ## build
