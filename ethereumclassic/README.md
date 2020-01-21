@@ -1,13 +1,16 @@
 # docker-ethereumclassic-coin
-docker for ethereumclassic(ETC) coin, ethereum-classic code in  ~~[ethereumclassic](https://github.com/ethereumclassic/go-ethereum)~~, move to [ethereumproject](https://github.com/ethereumproject/go-ethereum) but read only ! new project at [github-etclabscore](https://github.com/etclabscore/go-ethereum) 
+docker for ethereumclassic(ETC) coin, ethereum-classic code in new project at [github-etclabscore](https://github.com/etclabscore/go-ethereum) 
 
+docker used Multi-Geth [code](https://github.com/etclabscore/multi-geth/releases), and **It is no longer recommended to run Classic Geth in production**
+
+###
 
 ## build
-arg : `--build-arg path` download file from github in ethereum-classic !
+arg : `--build-arg path` download file from github in [multi-geth](https://github.com/etclabscore/multi-geth/releases) !
 
 ```
-docker build -t microwww/ethereum-classic:5.5.3 . \
-    --build-arg path=v5.5.3/ethereum-classic-go-ethereum-linux-v5.5.3.tar.gz
+docker build -t microwww/ethereum-classic:1.9.6-multi-geth . \
+    --build-arg path=v1.9.6-etclabscore/multi-geth-linux.zip
 ```
 
 ## run demo
