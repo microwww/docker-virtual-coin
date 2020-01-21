@@ -17,6 +17,8 @@ docker build -t microwww/ethereum-classic:1.9.6-multi-geth . \
 
 ```
 docker run -d -p 8545:9545 -p 30303:30303 \
-    -v /data/ethereum/:/root/.ethereum-classic/ microwww/ethereum-classic:6.0.6
+    -v /data/ethereum/:/root/.ethereum/ microwww/ethereum-classic:1.9.6-multi-geth
 ```
 File `/root/.ethereum-classic/OPTIONS` can set `docker run ...` arguments
+
+NOTE: classic-geth default block-chain data in **/root/.ethereum-classic/** , BUT multi-geth in **/root/.ethereum/**
