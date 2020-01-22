@@ -1,6 +1,14 @@
 #!/bin/bash
 set -e
-OPTIONS=""
+
+ofile="/data/OPTIONS"
+if [ ! -f "$ofile" ];then
+    mkdir -p /root/.ethereum/
+    echo ''  > ${ofile}
+fi
+
+OPTIONS=`cat ${ofile}`
+
 DIR="$HOME/.local/share/eosio/nodeos/"
 
 if [[ "$@" =~ "--data-dir" ]];then

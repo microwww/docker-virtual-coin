@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e
 
-ofile="/root/.ethereum-classic/OPTIONS"
+ofile="/root/.ethereum/OPTIONS"
 if [ ! -f "$ofile" ];then
-    mkdir -p /root/.ethereum-classic/
+    mkdir -p /root/.ethereum/
     echo ''  > ${ofile}
 fi
 

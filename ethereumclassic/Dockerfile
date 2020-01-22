@@ -15,5 +15,6 @@ RUN chmod +x /entrypoint.sh && rm -rf /tmp/*
 
 EXPOSE 8545 30303
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/entrypoint.sh", "--classic"]
+
 CMD []
