@@ -3,7 +3,7 @@ Debian for zcash (ZEC) coin , block-chain database in /home/zcash/.zcash ! And c
 
 ### build
 
-`sudo docker build -t microwww/zcash:2.0.7 --build-arg ZCASH_VERSION=2.0.7 .`,  version only 2.0.6, 2.0.7 . Derbian not find other version
+`sudo docker build -t microwww/zcash:2.0.7 --build-arg version=2.0.7 .`,  version only 2.0.6, 2.0.7 . Derbian not find other version
 
 ### demo : 
 ```
