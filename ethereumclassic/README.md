@@ -1,5 +1,5 @@
 # docker-ethereumclassic-coin
-docker for ethereumclassic(ETC) coin, ethereum-classic code in new project at [github-etclabscore](https://github.com/etclabscore/go-ethereum) 
+docker for ethereumclassic(ETC) coin, ethereum-classic code in new project at [github-etclabscore](https://github.com/etclabscore/go-ethereum) , now move to [core-geth](https://github.com/etclabscore/core-geth)
 
 docker used Multi-Geth [code](https://github.com/etclabscore/multi-geth/releases), and **It is no longer recommended to run Classic Geth in production**
 
